@@ -46,4 +46,27 @@ li {
 
 .create-task {
     margin-bottom: 32px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.task-input {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    width: 70%;
+    color: grey;
+}
+
+.add-task {
+    padding: 8px 14px;
+    outline: none;
+    border: none;
+    background-color: rgb(164, 129, 209);
+    color: white;
+    border-radius: 5px;
 }
