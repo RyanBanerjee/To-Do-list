@@ -1,6 +1,7 @@
+const taskListContainer=document.querySelector("ul")
 const taskItems=document.querySelectorAll(".task-item")
 const taskList=document.querySelectorAll("li")
-console.log(taskList)
+console.log(taskListContainer)
 function handleClick(taskItem) {
     if(taskItem.style.textDecoration=="line-through") {
         taskItem.style.textDecoration = "none";
@@ -16,20 +17,17 @@ for(let i=0;i <taskItems.length;i++) {
 
 const addTaskButton=document.querySelector(".add-task")
 const taskInput=document.querySelector(".task-input")
-newTask.appendChild(taskDiv);
-taskList.appendChild(newTask);
 
-
-function handleAddTask() {
+function handleAddTask() { 
     if(taskInput.value != "") {
-        const newTask = document.createElement("li");
-        const taskDiv = document.createElement("div")
+        const newTask = document.createElement("li"); 
+        const taskDiv = document.createElement("div") 
         taskDiv.classList.add("task-item")
-        newTask.appendChild(taskDiv)
+        newTask.appendChild(taskDiv) 
 
-        const taskTitle = document.createElement("p") 
+        const taskTitle = document.createElement("p")  
         taskTitle.classList.add("task-title")
-        taskTitle.textContent = taskInput.value
+        taskTitle.textContent = taskInput.value 
         taskDiv.appendChild(taskTitle)
 
         const iconsDiv = document.createElement("div")
@@ -40,7 +38,13 @@ function handleAddTask() {
         iconsDiv.appendChild(editIcon)
         iconsDiv.appendChild(deleteIcon)
         taskDiv.appendChild(iconsDiv)
-        taskList.push(newTask)
+
+        taskDiv.addEventListener("click", () => {
+            handleClick(taskDiv);
+        });
+
+        taskListContainer.appendChild(newTask)
+        taskInput.value=""
     }
 }
 
