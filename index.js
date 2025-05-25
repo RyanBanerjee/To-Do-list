@@ -7,12 +7,21 @@ const taskList=document.querySelectorAll("li")
 const addTaskButton=document.querySelector(".add-task")
 const taskInput=document.querySelector(".task-input")
 
+updateNoTasksMessage()
 
 function handleClick(taskTitle) {
     if (taskTitle.style.textDecoration === "line-through") {
         taskTitle.style.textDecoration = "none";
     } else {
         taskTitle.style.textDecoration = "line-through";
+    }
+}
+function updateNoTasksMessage() {
+    const noTasksMessage=document.querySelector(".no-tasks")
+    if (taskListContainer.children.length==0) {
+        noTasksMessage.style.display = "block";
+    } else {
+        noTasksMessage.style.display = "none"
     }
 }
 
@@ -25,6 +34,7 @@ for(let i=0;i <taskTitles.length;i++) {
 for(let i=0;i <deleteIcons.length;i++) {
     deleteIcons[i].addEventListener("click",() => {
         deleteIcons[i].closest("li").remove()
+        updateNoTasksMessage()
     })
 }
 
@@ -81,9 +91,10 @@ function handleAddTask() {
         const deleteIcon = document.createElement("i")
         deleteIcon.classList.add("fa-solid", "fa-trash")
         deleteIcon.addEventListener("click", () => {
-            deleteIcon.closest("li").remove()
+            deleteIcon.closest("li").remove();
+            updateNoTasksMessage(); 
         });
-
+        
         iconsDiv.appendChild(editIcon)
         iconsDiv.appendChild(deleteIcon)
         taskDiv.appendChild(iconsDiv)
@@ -94,6 +105,7 @@ function handleAddTask() {
 
         taskListContainer.appendChild(newTask)
         taskInput.value=""
+        updateNoTasksMessage()
     }
 }
 
