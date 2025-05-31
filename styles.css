@@ -66,6 +66,7 @@ li {
     padding: 8px 14px;
     outline: none;
     border: none;
+
     background-color: rgb(164, 129, 209);
     color: white;
     border-radius: 5px;
@@ -76,4 +77,4 @@ li {
 }
 .no-tasks {
     text-align: center;
-}
+} 

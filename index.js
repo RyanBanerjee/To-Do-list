@@ -87,7 +87,7 @@ function handleAddTask() {
                 }
             })
         })
-        editIcon.style.marginRight = "10px";
+        editIcon.style.marginRight = "13px";
         const deleteIcon = document.createElement("i")
         deleteIcon.classList.add("fa-solid", "fa-trash")
         deleteIcon.addEventListener("click", () => {
@@ -110,5 +110,3 @@ function handleAddTask() {
 }
 
 addTaskButton.addEventListener("click",handleAddTask)
-// On click of the add task button the newTask(li tag) should be a child of the ul tag
-//Once this is done the new task should appear on the screen
