@@ -70,6 +70,7 @@ function handleAddTask() {
         taskDiv.appendChild(taskTitle)
 
         const iconsDiv = document.createElement("div")
+        iconsDiv.classList.add("icons")
         const editIcon = document.createElement("i")
         editIcon.classList.add("fa-solid", "fa-pen-to-square")
         editIcon.addEventListener("click", () => {
@@ -87,7 +88,6 @@ function handleAddTask() {
                 }
             })
         })
-        editIcon.style.marginRight = "13px";
         const deleteIcon = document.createElement("i")
         deleteIcon.classList.add("fa-solid", "fa-trash")
         deleteIcon.addEventListener("click", () => {

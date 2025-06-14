@@ -71,10 +71,19 @@ li {
     color: white;
     border-radius: 5px;
 }
-
-.fa-pen-to-square {
-    margin-right: 10px;
-}
 .no-tasks {
     text-align: center;
 } 
+
+.icons {
+    display: flex;
+    margin-right: 5px;
+    gap: 15px;
+}
+
+@media screen and (max-width: 550px){
+    .create-task {
+        flex-direction: column;
+        width: 100%;
+    }
+}
